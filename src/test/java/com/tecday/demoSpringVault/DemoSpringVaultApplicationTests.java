@@ -1,4 +1,4 @@
-package com.and1.tecday.demoSpringVault;
+package com.tecday.demoSpringVault;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

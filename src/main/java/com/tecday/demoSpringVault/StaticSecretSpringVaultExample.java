@@ -1,4 +1,4 @@
-package com.and1.tecday.demoSpringVault;
+package com.tecday.demoSpringVault;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,8 +12,7 @@ public class StaticSecretSpringVaultExample {
 
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-                VaultConfiguration.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(VaultConfiguration.class);
 
         context.start();
 
@@ -25,13 +24,13 @@ public class StaticSecretSpringVaultExample {
 
         vaultTemplate.write("secret/myapp", secret);
 
-        VaultResponseSupport<Secrets> response = vaultTemplate.read("secret/myapp", Secrets.class);
+        VaultResponseSupport<Secrets> response = vaultTemplate.read("secret/myapp",Secrets.class);
         log.info("Username is" + response.getData().getUsername());
         log.info("Password is" + response.getData().getPassword());
 
         vaultTemplate.delete("secret/myapp");
 
-        response = vaultTemplate.read("secret/myapp", Secrets.class);
+        response = vaultTemplate.read("secret/myapp",Secrets.class);
 
         isTrue(response == null, "after deleting response must be null");
 
