@@ -13,13 +13,11 @@ import javax.persistence.Table;
 @Table(name = "Customer")
 @Data
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String customer;
-    private String address;
-
-
+    private String firstName;
+    private String lastName;
+    private String email;
 }

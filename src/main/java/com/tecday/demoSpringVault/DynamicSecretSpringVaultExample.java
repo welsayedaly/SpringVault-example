@@ -16,25 +16,23 @@ public class DynamicSecretSpringVaultExample {
 
         VaultTemplate vaultTemplate = context.getBean(VaultTemplate.class);
         VaultResponseSupport<Secrets> readPostgres = vaultTemplate.read("postgresql/creds/readonly", Secrets.class);
-        log.info(readPostgres.getData().getUsername());
-        log.info(readPostgres.getData().getPassword());
 
         DynamicVaultConfiguration dynamicVaultConfiguration = context.getBean(DynamicVaultConfiguration.class);
         dynamicVaultConfiguration.setUsername(readPostgres.getData().getUsername());
         dynamicVaultConfiguration.setPassword(readPostgres.getData().getPassword());
 
         CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
-        Customer customer = createNewCustomer();
+        Customer customer = createNewCustomer("Walid", "El Sayed Aly", "walid.elsayedaly@gmail,com");
         customerRepository.save(customer);
-
 
     }
 
-    private static Customer createNewCustomer() {
+    private static Customer createNewCustomer(String firstName, String lastName, String email) {
 
         Customer result = new Customer();
-        result.setAddress("my address_" + System.currentTimeMillis());
-        result.setCustomer("customer_ " + System.currentTimeMillis());
+        result.setFirstName(firstName);
+        result.setLastName(lastName);
+        result.setEmail(email);
         return result;
     }
 
