@@ -25,8 +25,8 @@ public class StaticSecretSpringVaultExample {
         vaultTemplate.write("secret/myapp", secret);
 
         VaultResponseSupport<Secrets> response = vaultTemplate.read("secret/myapp",Secrets.class);
-        log.info("Username is" + response.getData().getUsername());
-        log.info("Password is" + response.getData().getPassword());
+        log.info("##################### Username is" + response.getData().getUsername());
+        log.info("##################### Password is" + response.getData().getPassword());
 
         vaultTemplate.delete("secret/myapp");
 
