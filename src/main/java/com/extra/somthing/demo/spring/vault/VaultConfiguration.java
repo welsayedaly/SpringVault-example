@@ -1,4 +1,4 @@
-package com.tecday.demoSpringVault;
+package com.extra.somthing.demo.spring.vault;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;

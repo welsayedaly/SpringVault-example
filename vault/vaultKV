@@ -1,0 +1,3 @@
+ vault kv get secret/my-secret
+
+ vault kv get -format=json secret/my-secret

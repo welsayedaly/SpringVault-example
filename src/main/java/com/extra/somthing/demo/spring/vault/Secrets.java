@@ -1,9 +1,9 @@
-package com.tecday.demoSpringVault;
+package com.extra.somthing.demo.spring.vault;
 
 import lombok.Getter;
 
 @Getter
-public class Secrets {
+class Secrets {
 
      String username;
      String password;

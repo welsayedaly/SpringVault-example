@@ -1,0 +1,24 @@
+
+to write a secret with vault:
+ -> vault kv put secret/helloJDK jdk=io
+
+we can also write multiable pieces with data:
+-> vault kv put secret/hello1 walid=test1 sam=sordfish
+
+to raed the password:
+vault kv get secret/helloJDK
+vault kv get secret/hello1
+
+you can also see the data in json format:
+vault kv get -format=json secret/helloJDK
+
+and the delte case with:
+vault kv delete secret/helloJDK
+
+
+Version reading with version:
+vault kv put secret/helloJDK jdk=ioVersion2
+vault kv get -format=json secret/helloJDK -versions=1
+
+
+show Vault WEB UI : http://localhost:8200/ui/vault/auth

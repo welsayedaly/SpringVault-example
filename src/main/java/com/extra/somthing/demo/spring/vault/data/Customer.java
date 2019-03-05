@@ -1,4 +1,4 @@
-package com.tecday.demoSpringVault.data;
+package com.extra.somthing.demo.spring.vault.data;
 
 import lombok.Data;
 

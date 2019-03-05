@@ -1,4 +1,4 @@
-package com.tecday.demoSpringVault;
+package com.extra.somthing.demo.spring.vault;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

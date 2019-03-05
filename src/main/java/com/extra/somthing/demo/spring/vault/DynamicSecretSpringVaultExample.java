@@ -1,6 +1,6 @@
-package com.tecday.demoSpringVault;
+package com.extra.somthing.demo.spring.vault;
 
-import com.tecday.demoSpringVault.data.Customer;
+import com.extra.somthing.demo.spring.vault.data.Customer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.vault.core.VaultTemplate;
@@ -22,7 +22,7 @@ public class DynamicSecretSpringVaultExample {
         dynamicVaultConfiguration.setPassword(readPostgres.getData().getPassword());
 
         CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
-        Customer customer = createNewCustomer("Walid", "El Sayed Aly", "walid.elsayedaly@gmail,com");
+        Customer customer = createNewCustomer("Walid", "El Sayed Aly", "walid.elsayedaly@extra-something.com");
         customerRepository.save(customer);
 
     }
